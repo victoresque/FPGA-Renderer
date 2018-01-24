@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element sdram
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element sys_sdram_pll_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="EP4CE115F29C7" />
+ <parameter name="deviceFamily" value="Cyclone IV E" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="rst" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="sdram_avm" internal="sdram.s1" type="avalon" dir="end" />
+ <interface
+   name="sdram_clk"
+   internal="sys_sdram_pll_0.sdram_clk"
+   type="clock"
+   dir="start" />
+ <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
+ <module name="clk_0" kind="clock_source" version="16.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   name="sdram"
+   kind="altera_avalon_new_sdram_controller"
+   version="16.1"
+   enabled="1">
+  <parameter name="TAC" value="5.4" />
+  <parameter name="TMRD" value="3" />
+  <parameter name="TRCD" value="15.0" />
+  <parameter name="TRFC" value="70.0" />
+  <parameter name="TRP" value="15.0" />
+  <parameter name="TWR" value="14.0" />
+  <parameter name="casLatency" value="3" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="columnWidth" value="10" />
+  <parameter name="componentName" value="$${FILENAME}_sdram" />
+  <parameter name="dataWidth" value="32" />
+  <parameter name="generateSimulationModel" value="false" />
+  <parameter name="initNOPDelay" value="0.0" />
+  <parameter name="initRefreshCommands" value="2" />
+  <parameter name="masteredTristateBridgeSlave" value="0" />
+  <parameter name="model">single_Micron_MT48LC4M32B2_7_chip</parameter>
+  <parameter name="numberOfBanks" value="4" />
+  <parameter name="numberOfChipSelects" value="1" />
+  <parameter name="pinsSharedViaTriState" value="false" />
+  <parameter name="powerUpDelay" value="100.0" />
+  <parameter name="refreshPeriod" value="7.8125" />
+  <parameter name="registerDataIn" value="true" />
+  <parameter name="rowWidth" value="13" />
+ </module>
+ <module
+   name="sys_sdram_pll_0"
+   kind="altera_up_avalon_sys_sdram_pll"
+   version="16.1"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="CIII_boards" value="DE0" />
+  <parameter name="CIV_boards" value="DE2-115" />
+  <parameter name="CV_boards" value="DE1-SoC" />
+  <parameter name="MAX10_boards" value="DE10-Lite" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="gui_outclk" value="50.0" />
+  <parameter name="gui_refclk" value="50.0" />
+  <parameter name="other_boards" value="None" />
+ </module>
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="sdram.clk" />
+ <connection
+   kind="clock"
+   version="16.1"
+   start="clk_0.clk"
+   end="sys_sdram_pll_0.ref_clk" />
+ <connection
+   kind="reset"
+   version="16.1"
+   start="clk_0.clk_reset"
+   end="sys_sdram_pll_0.ref_reset" />
+ <connection kind="reset" version="16.1" start="clk_0.clk_reset" end="sdram.reset" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>
