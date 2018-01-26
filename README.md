@@ -22,8 +22,8 @@ Rendering is based on rasterization, which is normally faster than ray-tracing.
 * Reading .obj model file from SD card
 * Reading .png texture file from SD card
 * Camera control with keyboard and mouse (Movement: WASD; View: IJKL or mouse)
-* Resolution: 320x240 scaled to 640x480 VGA
-* Frame rate: about 3~5 fps
+* Resolution: 160x120 scaled to 640x480 VGA
+* Frame rate: about 10~15 fps
 
 ## Used libraries and resources
 * **lodepng**: https://github.com/lvandeve/lodepng
