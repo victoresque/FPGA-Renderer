@@ -24,3 +24,9 @@ Rendering is based on rasterization, which is normally faster than ray-tracing.
 * Camera control with keyboard and mouse (Movement: WASD; View: IJKL or mouse)
 * Resolution: 320x240 scaled to 640x480 VGA
 * Frame rate: about 3~5 fps
+
+## Used libraries and resources
+* **lodepng**: https://github.com/lvandeve/lodepng
+* **tinyobjloader-c**: https://github.com/syoyo/tinyobjloader-c
+* Some example code from Terasic DE2-115 CD-ROM
+* SD Card controller from Altera University Program
