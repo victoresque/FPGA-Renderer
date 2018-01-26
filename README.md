@@ -14,7 +14,7 @@ Running a simple 3D rendering program on DE2-115
 
 Currently using Nios II w/ Floating Point Hardware 2
 
-Program written in C89
+Program written in ANSI C
 
 Rendering is based on rasterization, which is normally faster than ray-tracing.
 
