@@ -2,7 +2,7 @@
 An implementation of 3D renderer on Terasic DE2-115 FPGA board
 
 ## Requirements
-* Quartus 15
+* Quartus 16.1
 * DE2-115 FPGA board
 
 ## Description
